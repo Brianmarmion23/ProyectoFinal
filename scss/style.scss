@@ -1,0 +1,287 @@
+@import "colores";
+@import "maxin";
+@import "menu";
+@import "slider";
+@import "productos";
+
+@font-face {
+    font-family: "Inconsolata";
+    src: url(/fonts/Inconsolata.ttf);
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url(/fonts/Poppins-Bold.ttf);
+}
+
+.mapa {
+    @include mapa()
+}
+
+#boton {
+    @include boton()
+}
+
+.slider {
+    @include slider()
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Inconsolata";
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.mainHeader {
+    padding: 0 20px;
+}
+
+.mainHeaderTitle {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 10px 0;
+    color: #454546;
+    font-family: "Poppins";
+}
+
+.mainHeaderContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mainHeaderLink {
+    color: $color-principal;
+}
+
+
+/*Estilos para tablets*/
+
+@media screen and (min-width:768px) {
+    .slider {
+        height: 400px;
+    }
+
+    .editorItem {
+        height: 250px;
+    }
+
+    .containerTips {
+        margin: 50px 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/*Estilos para pc*/
+
+@media screen and (min-width:1024px) {
+    .mainHeader {
+        width: 1000px;
+        margin: auto;
+    }
+
+    .iconMenu {
+        display: none;
+    }
+
+    .mainHeader .mainContainer {
+        display: flex;
+        align-items: center;
+    }
+
+    .mainHeaderContainer {
+        flex-wrap: wrap;
+        align-content: flex-start;
+    }
+
+    .mainHeaderP {
+        width: 100%;
+    }
+
+    .mainHeaderContainer:nth-child(2) {
+        order: -1;
+        width: 25%;
+    }
+
+    .mainHeaderContainer:nth-child(3) {
+        width: 25%;
+        padding: 0 20px;
+    }
+
+    .mainHeaderTitle {
+        width: 100%;
+        font-size: 4em;
+        margin: 0;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .mainHeaderLink {
+        margin-bottom: 20px;
+    }
+
+    .mainHeaderContainerBtn {
+        width: 130px;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    .mainHeaderInput {
+        width: 85%;
+    }
+
+    .mainNav {
+        visibility: visible;
+        opacity: 1;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .menu {
+        position: static;
+        width: 100%;
+        display: flex;
+        background: none;
+    }
+
+    .menuLink {
+        color: $color-principal;
+    }
+
+    .menuLink:hover {
+        background: $color-principal;
+        color: $blanco;
+    }
+
+    .containerProducts {
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 15px;
+    }
+
+    .productImg {
+        height: 300px;
+    }
+
+    .containerInfo {
+        font-size: 1em;
+    }
+
+    .containerEditor {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .editorItem {
+        width: 48%;
+    }
+
+    .mainFooter {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 20px;
+    }
+
+    .copy {
+        grid-column-start: span 4;
+        text-align: center;
+    }
+}
+
+/*Page Contact*/
+
+form {
+    width: 450px;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border-radius: 7px;
+    margin-bottom: 40px;
+}
+
+.pContact {
+    color: $color-principal;
+    text-align: center;
+    margin: 0;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+input,
+textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 7px;
+    box-sizing: border-box;
+    font-size: 17px;
+    border: none;
+}
+
+textarea {
+    min-height: 100px;
+    max-height: 200px;
+    max-width: 100%;
+}
+
+#boton {
+    background: $color-principal;
+    color: #ccc;
+    padding: 20px;
+}
+
+#boton:hover {
+    cursor: pointer;
+}
+
+@media (max-width:480px) {
+    form {
+        width: 100%;
+    }
+}
+
+.mapa {
+    width: 800px;
+    height: 600px;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    box-sizing: border-box;
+    margin-top: 40px;
+    border-radius: 7px;
+    margin-bottom: 40px;
+}
+
+.mainS {
+    margin-bottom: 40px;
+}
+
+
+
+.mainSE .product::before {
+    content: "Sale";
+    background: #191ba6;
+    padding: 10px;
+    width: 60px;
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    transform: rotate(-90deg);
+    color: $blanco;
+}
+
+.mainSE {
+    margin-bottom: 40px;
+}
+
+.mainTitleI{
+    text-align: center;
+}
